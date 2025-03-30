@@ -13,4 +13,14 @@ public class TreeNode {
         this.left = left; 
         this.right = right;
     }
+
+
+
+    public TreeNode bfs(int target) {
+        return null;
+    }
+
+    public TreeNode dfs(int target) {
+        return null;
+    }
 }
