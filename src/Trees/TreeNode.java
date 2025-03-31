@@ -1,5 +1,5 @@
 package Trees;
-import java.util.HashSet;
+
 public class TreeNode {
     public int value;
     public TreeNode left;
@@ -23,13 +23,37 @@ public class TreeNode {
         
     }
 
-    public void dfs(TreeNode root) {
+
+    /*
+     * In-order traversal of a binary tree in time complexity O(n)
+     */
+    public void inOrderDFS(TreeNode root) {
         if (root == null) {
             return;
         } else {
-            dfs(root.left);
+            inOrderDFS(root.left);
             System.out.println(root.value);
-            dfs(root.right);
+            inOrderDFS(root.right);
+        }
+    }
+
+    public void preOrderDFS(TreeNode root) {
+        if (root == null) {
+            return;
+        } else {
+            System.out.println(root.value);
+            preOrderDFS(root.left);
+            preOrderDFS(root.right);
+        }
+    }
+
+    public void postOrderDFS(TreeNode root) {
+        if (root == null) {
+            return;
+        } else {
+            postOrderDFS(root.left);
+            postOrderDFS(root.right);
+            System.out.println(root.value);
         }
     }
 }
