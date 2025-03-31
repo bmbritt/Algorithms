@@ -1,4 +1,5 @@
 package Trees;
+import java.util.HashSet;
 public class TreeNode {
     public int value;
     public TreeNode left;
@@ -16,11 +17,22 @@ public class TreeNode {
 
 
 
-    public TreeNode bfs(int target) {
-        return null;
+    public void bfs() {
+
+
+        
     }
 
-    public TreeNode dfs(int target) {
-        return null;
+    public void dfs() {
+        
+
+
+
+
+
+
+
+
+
     }
 }
