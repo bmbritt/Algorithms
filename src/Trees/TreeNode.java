@@ -23,16 +23,13 @@ public class TreeNode {
         
     }
 
-    public void dfs() {
-        
-
-
-
-
-
-
-
-
-
+    public void dfs(TreeNode root) {
+        if (root == null) {
+            return;
+        } else {
+            dfs(root.left);
+            System.out.println(root.value);
+            dfs(root.right);
+        }
     }
 }
