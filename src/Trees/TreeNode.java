@@ -23,10 +23,6 @@ public class TreeNode {
         
     }
 
-
-    /*
-     * In-order traversal of a binary tree in time complexity O(n)
-     */
     public void inOrderDFS(TreeNode root) {
         if (root == null) {
             return;
@@ -34,6 +30,16 @@ public class TreeNode {
             inOrderDFS(root.left);
             System.out.println(root.value);
             inOrderDFS(root.right);
+        }
+    }
+
+    public void reverseOrderDFS(TreeNode root) {
+        if (root == null) {
+            return;
+        } else {
+            reverseOrderDFS(root.right);
+            System.out.println(root.value);
+            reverseOrderDFS(root.left);
         }
     }
 
