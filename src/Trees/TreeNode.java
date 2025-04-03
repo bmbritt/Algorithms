@@ -1,5 +1,7 @@
 package Trees;
 
+import java.util.Arrays;
+
 public class TreeNode {
     public int value;
     public TreeNode left;
@@ -62,4 +64,30 @@ public class TreeNode {
             System.out.println(root.value);
         }
     }
+
+
+    // Solution to build binary tree from its preorder and inorder traversals
+     public TreeNode buildTree(int[] preorder, int[] inorder) {
+        
+        if (preorder.length == 0 || inorder.length == 0) {
+            return null;
+        } else {
+
+            int rootVal = preorder[0];
+            TreeNode root = new TreeNode(rootVal);
+
+            int mid = -1;
+            for (int i = 0; i < inorder.length; i++) {
+                if (inorder[i] == rootVal) {
+                    mid = i;
+                    break;
+                }
+            }
+
+            root.left = buildTree(Arrays.copyOfRange(preorder, 1, mid + 1), Arrays.copyOfRange(inorder, 0, mid));
+            root.right = buildTree(Arrays.copyOfRange(preorder, mid + 1, preorder.length), Arrays.copyOfRange(inorder, mid + 1, inorder.length));
+
+            return root;
+        }
+     }
 }
