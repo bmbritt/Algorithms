@@ -66,7 +66,10 @@ public class TreeNode {
     }
 
 
-    // Solution to build binary tree from its preorder and inorder traversals
+    public int kthSmallest(TreeNode root, int k) {
+        return -1;
+    }
+
     /*
      * Uses the preorder traversal to identify the root
      * and the inorder traversal to determine left and right subtrees of that root.
