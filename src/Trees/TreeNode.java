@@ -65,9 +65,32 @@ public class TreeNode {
         }
     }
 
-
     public int kthSmallest(TreeNode root, int k) {
-        return -1;
+
+
+        int[] tmp = new int[2];
+        tmp[0] = k;
+        inOrderDFS(root, tmp);
+
+        return tmp[1];
+    }
+
+
+    public void inOrderDFS(TreeNode root, int[] tmp) {
+
+        if (root == null) {
+            return;
+        } else {
+            inOrderDFS(root.left, tmp);
+            if (tmp[0] == 1) {
+                tmp[1] = root.value;
+                tmp[0] -= 1;
+                return;
+            } else {
+                tmp[0] -= 1;
+            }
+            inOrderDFS(root.right, tmp);
+        }
     }
 
     /*
